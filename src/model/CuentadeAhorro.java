@@ -9,57 +9,36 @@ package model;
  *
  * @author hp245
  */
-public class CuentadeAhorro {
-        int numerodecuenta;
-        String cliente;
-        double saldo;
-        public double saldo2;
+public class CuentadeAhorro extends CuentaBasica {
+    
+        double saldo2;
         double tasaInteres= 0.3287;
-        public double Interes;
-        public double comision;
+        double Interes;
+        double comision;
         double comisionporsaldo=50;
-        double cantidad;
-        double retiro;
-        public double Interes2;
-        public double comision2;
-        
+        double cantidad2;
+        double retiro2;
+        double Interes2;
+        double comision2;
+
+    public CuentaDeAhorro(double saldo2, double Interes, double comision, double cantidad2, double retiro2, double Interes2, double comision2, int numero_de_cuenta, double saldo, double cantidad, double retiro) {
+        super(numero_de_cuenta, saldo, cantidad, retiro);
+        this.saldo2 = saldo2;
+        this.Interes = Interes;
+        this.comision = comision;
+        this.cantidad2 = cantidad2;
+        this.retiro2 = retiro2;
+        this.Interes2 = Interes2;
+        this.comision2 = comision2;
+    }
+
+    public CuentaDeAhorro() {
+    }
+
         public void CuentaDeAhorro (int numerodecuenta, String cliente)
         {
             this.numerodecuenta=numerodecuenta;
             this.cliente=cliente;
-        }
-        
-        public double getSaldo()
-        {
-            return this.saldo;
-        }
-                
-        public double depositar(double deposito)
-        {
-            this.cantidad=deposito;
-            saldo= saldo + cantidad;
-            return saldo;
-        }
-
-        public boolean retirar (double retirar)
-         {
-            boolean xSaldo=true;
-            this.retiro=retirar;
-            if(retiro<=saldo)
-            {
-                saldo=saldo-retiro;
-                xSaldo=true;
-            }
-            else
-            {
-                if (retiro>saldo)
-                {
-                    xSaldo=false;
-                }
-
-            }
-            return xSaldo;
-
         }
         
         public double calcularInteres (double periodo)
@@ -73,7 +52,7 @@ public class CuentadeAhorro {
         {
             if(saldo<1000)
             {
-                comision = 50;
+                comision = comisionporsaldo*periodo;
             }
             else
             {
@@ -87,7 +66,6 @@ public class CuentadeAhorro {
         
         public double cortemensual ()
         {
-            saldo2=saldo;
             Interes2=(tasaInteres*saldo)/100;
             
             if(saldo<1000)
