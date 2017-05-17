@@ -7,6 +7,7 @@ package cuentasbanc;
 import java.util.Scanner;
 import model.CuentaBasica;
 import model.CuentadeAhorro;
+import model.CuentaDeCheques;
 
 /**
  *
@@ -20,10 +21,11 @@ public class Main {
     public static void main(String[] args) {
         Scanner entrada = new Scanner (System.in);
         
-        CuentaBasica micuenta = new CuentaBasica();
+         CuentadeAhorro micuenta2 = new CuentadeAhorro();
                 
         int menu;
-        int menu2;
+        int menu2 = 0;
+        int menu3 = 0;
         
         do
         {       
@@ -32,13 +34,14 @@ public class Main {
         System.out.println("2.- Deposito");
         System.out.println("3.- Retirar");
         System.out.println("4.- Cuenta de Ahorro");
-        System.out.println("5.- Salir");
+        System.out.println("5.- Cuenta de Cheques");
+        System.out.println("6.- Salir");
 
         menu=entrada.nextInt();
         
         if (menu == 1)
         {
-         System.out.println("El saldo de la cuenta es de: " + micuenta.getSaldo());
+         System.out.println("El saldo de la cuenta es de: " + micuenta2.getSaldo());
         }
         else
         {
@@ -47,7 +50,7 @@ public class Main {
                 double deposito;
                 System.out.print("Ingresa la cantidad a Depositar: $");
                 deposito=entrada.nextDouble();
-                micuenta.depositar(deposito);
+                micuenta2.depositar(deposito);
             }
             else
             {
@@ -56,16 +59,14 @@ public class Main {
                     double retirar;
                     System.out.println("Ingresa la cantidad a Retirar: $");
                     retirar=entrada.nextDouble();
-                    micuenta.retirar(retirar);
+                    micuenta2.retirar(retirar);
                 }
                 
             }
-        }       
-        
+        }      
         if(menu==4)
              
-        {
-         CuentadeAhorro micuenta2 = new CuentadeAhorro();   
+        {   
             
         do
         {
@@ -139,15 +140,43 @@ public class Main {
 
                     }
                 }  
+            CuentaDeCheques micuenta3 = new CuentaDeCheques();
             
+            if (menu3==5)
+            {
+                do
+                {
+            System.out.println("Selecciona una opcion");
+            System.out.println("1.- Retirar");
+            System.out.println("2.- Comision por cheques");
+            System.out.println("3.- Ver Corte Mensual");
+            System.out.println("4.- Salir");
+            menu3=entrada.nextInt();
+            
+            if (menu3 == 1){
+                void retirar;
+                System.out.println("Retiro de: ");
+                
+                }
+               else
+                {
+               if(menu3 == 2)
+                    {
+                double deposito;
+                System.out.print("Ingresa la cantidad a Depositar: $");
+                deposito=entrada.nextDouble();
+                micuenta3.depositar(deposito);
+                
+            }
+                }
+            }
          }while (menu2 != 7); 
         }
+
         
-        }while (menu != 5);
+     }while (menu != 6);
       
     }
     }
-
-    
     
 

@@ -10,20 +10,29 @@ package model;
  * @author hp245
  */
 public class CuentaBasica {
-    private int numero_de_cuenta; 
-    private String cliente=null;
-    private double saldo;
+    
+    protected int numerodecuenta; 
+    protected String cliente;
+    protected double saldo;
     private double cantidad;
     private double retiro;
-    
-    public void CuentaBasica (int numero_de_cuenta, String cliente, int saldo)
-    {
-        this.numero_de_cuenta = numero_de_cuenta;
-        this.cliente = cliente;
-        this.saldo =    saldo;
-      
+
+    public CuentaBasica(int numero_de_cuenta, double saldo, double cantidad, double retiro) {
+        this.numerodecuenta = numero_de_cuenta;
+        this.saldo = saldo;
+        this.cantidad = cantidad;
+        this.retiro = retiro;
     }
+
+   public CuentaBasica() {
+        
+    }
+
+   
     
+    
+    
+   
 
     public double getSaldo()
     {
@@ -45,7 +54,6 @@ public class CuentaBasica {
             
          return saldo;
     }
-    
 }
 
 

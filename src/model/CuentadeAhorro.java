@@ -11,17 +11,18 @@ package model;
  */
 public class CuentadeAhorro extends CuentaBasica {
     
-        double saldo2;
+        public double saldo2;
         double tasaInteres= 0.3287;
-        double Interes;
-        double comision;
+        public double Interes;
+        public double comision;
         double comisionporsaldo=50;
         double cantidad2;
         double retiro2;
-        double Interes2;
-        double comision2;
+        public double Interes2;
+        public double comision2;
 
-    public CuentaDeAhorro(double saldo2, double Interes, double comision, double cantidad2, double retiro2, double Interes2, double comision2, int numero_de_cuenta, double saldo, double cantidad, double retiro) {
+    public CuentadeAhorro(double saldo2, double Interes, double comision, double cantidad2, double retiro2, 
+            double Interes2, double comision2, int numero_de_cuenta, double saldo, double cantidad, double retiro) {
         super(numero_de_cuenta, saldo, cantidad, retiro);
         this.saldo2 = saldo2;
         this.Interes = Interes;
@@ -32,7 +33,7 @@ public class CuentadeAhorro extends CuentaBasica {
         this.comision2 = comision2;
     }
 
-    public CuentaDeAhorro() {
+    public CuentadeAhorro() {
     }
 
         public void CuentaDeAhorro (int numerodecuenta, String cliente)
